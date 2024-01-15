@@ -1,0 +1,34 @@
+# mysql 配置
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  username: root
+  password: "Abcdef@123456"
+  db_name: salvo_web
+  #最小连接数
+  pool_min_idle: 8
+  #最大连接数
+  pool_max_open: 32
+  #连接超时时间单位秒
+  timeout_seconds: 15
+
+# Redis
+redis:
+    address: 127.0.0.1:6379
+    db: 1
+    idleTimeout: "60s" #连接最大空闲时间，使用时间字符串例如30s/1m/1d
+    maxConnLifetime: "90s" #连接最长存活时间，使用时间字符串例如30s/1m/1d
+    waitTimeout: "60s" #等待连接池连接的超时时间，使用时间字符串例如30s/1m/1d
+    dialTimeout: "30s" #TCP连接的超时时间，使用时间字符串例如30s/1m/1d
+    readTimeout: "30s" #TCP的Read操作超时时间，使用时间字符串例如30s/1m/1d
+    writeTimeout: "30s" #TCP的Write操作超时时间，使用时间字符串例如30s/1m/1d
+    maxActive: 100
+
+application:
+  server:
+    addr: 0.0.0.0
+    port: 8081
+
+snow_flake_id_worker:
+  work_id: 5
+  data_center_id: 3
